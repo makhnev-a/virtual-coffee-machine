@@ -10,9 +10,6 @@ export const Products = () => {
 
     return (
         <>
-            <section>
-
-            </section>
             <aside className={styles.products}>
                 {products.map((product: ProductType, index: number) =>
                     <Product

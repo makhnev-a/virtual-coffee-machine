@@ -1,18 +1,22 @@
 import React from 'react';
 import './App.css';
 import {Products} from './components/Products/Products';
-import {UserDeposit} from "./components/UserDeposit";
+import {UserDeposit} from "./components/UserDeposit/UserDeposit";
 import {MachineDeposit} from './components/MachineDeposit';
-import {DepositedAmount} from "./components/DepositedAmount";
+import {Title} from "./components/Title/Title";
 
 
 function App() {
     return (
         <div className="App">
-            <Products/>
-            <UserDeposit/>
-            <MachineDeposit/>
-            <DepositedAmount/>
+            <div className="wrapper">
+                <Products/>
+                <section className={'userBlock'}>
+                    <UserDeposit/>
+                    <MachineDeposit/>
+                    <Title text={'Внесенная сумма'} />
+                </section>
+            </div>
         </div>
     );
 }
