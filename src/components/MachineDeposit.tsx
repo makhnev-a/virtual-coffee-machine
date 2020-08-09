@@ -5,12 +5,12 @@ import {AppStateType} from "../redux/store";
 import {Title} from "./Title/Title";
 
 export const MachineDeposit = () => {
-    const machineDeposit: any = useSelector<AppStateType>(state => state.machine.deposite);
+    const {deposite, amount}: any = useSelector<AppStateType>(state => state.machine);
 
     return (
         <>
-            <Title text={'Деньги автомата'} num={1800} />
-            {machineDeposit.map((dep: CurrenceType, index: number) => {
+            <Title text={'Деньги автомата'} num={amount} />
+            {deposite.map((dep: CurrenceType, index: number) => {
                 return <div key={`machineDeposite${index}`}>{dep.currency} руб. ({dep.count})</div>
             })}
         </>
