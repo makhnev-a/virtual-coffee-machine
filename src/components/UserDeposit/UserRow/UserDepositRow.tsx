@@ -1,7 +1,7 @@
 import React from "react";
 import {setAmountAc} from "../../../redux/reducers/user/user.reducer";
 import {useDispatch} from "react-redux";
-import {setMachineAmountAc} from "../../../redux/reducers/machine/machine.reducer";
+import {setMachineAmountAc, setUserDepositedAmountAc} from "../../../redux/reducers/machine/machine.reducer";
 
 type PropsType = {
     currency: number
@@ -14,6 +14,7 @@ export const UserDepositRow = ({currency, count, index}: PropsType) => {
     const clickAmountHandler = () => {
         dispatch(setAmountAc(count, currency));
         dispatch(setMachineAmountAc(count, currency));
+        dispatch(setUserDepositedAmountAc(currency));
     };
 
     return (

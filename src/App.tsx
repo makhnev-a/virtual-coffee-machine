@@ -3,7 +3,7 @@ import './App.css';
 import {Products} from './components/Products/Products';
 import {UserDeposit} from "./components/UserDeposit/UserDeposit";
 import {MachineDeposit} from './components/MachineDeposit';
-import {Title} from "./components/Title/Title";
+import {DepositedAmount} from "./components/DepositedAmount";
 
 
 function App() {
@@ -14,7 +14,8 @@ function App() {
                 <section className={'userBlock'}>
                     <UserDeposit/>
                     <MachineDeposit/>
-                    <Title text={'Внесенная сумма'} />
+                    {/*<Title text={'Внесенная сумма'} />*/}
+                    <DepositedAmount/>
                 </section>
             </div>
         </div>

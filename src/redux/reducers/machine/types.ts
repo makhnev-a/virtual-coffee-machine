@@ -1,6 +1,7 @@
 export type InitialStateType = {
     deposite: Array<MachineCurrencyType>
-    amount: 1800
+    amount: number,
+    userDepositedAmount: number
 };
 
 export type MachineCurrencyType = {
