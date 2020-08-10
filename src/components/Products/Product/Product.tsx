@@ -15,18 +15,19 @@ export const Product = ({name, count, price}: PropsType) => {
 
     const clickProductHandler = () => {
         if (amount === 0) {
-            alert('Внесите деньги');
+            alert('Внесите сумму!');
         } else if (amount < price) {
-            alert('Вам не хватает, внесите еще денег');
+            alert(`Недостаточно средств: ${price - amount}`);
         } else {
             dispatch(setBuyProductAc(price));
+            alert(`Спасибо! Вами приобретён ${name}`);
         }
     };
 
     return (
         <article>
             <span>{name} ({count})</span>
-            <div>{price} {amount}</div>
+            <div>{price} руб.</div>
             <button onClick={clickProductHandler}>Купить</button>
         </article>
     );

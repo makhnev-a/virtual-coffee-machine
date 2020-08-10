@@ -5,7 +5,6 @@ import {UserDeposit} from "./components/UserDeposit/UserDeposit";
 import {MachineDeposit} from './components/MachineDeposit';
 import {DepositedAmount} from "./components/DepositedAmount";
 
-
 function App() {
     return (
         <div className="App">
@@ -14,7 +13,6 @@ function App() {
                 <section className={'userBlock'}>
                     <UserDeposit/>
                     <MachineDeposit/>
-                    {/*<Title text={'Внесенная сумма'} />*/}
                     <DepositedAmount/>
                 </section>
             </div>
