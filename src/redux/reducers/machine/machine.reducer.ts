@@ -1,8 +1,15 @@
-import {InitialStateType, MachineCurrencyType} from "./types";
+import {
+    ActionsType,
+    InitialStateType,
+    MachineCurrencyType,
+    SetBuyProductType,
+    SetMachineAmountType,
+    SetUserDepositedAmountType
+} from "./types";
 
-const SET_AMOUNT = 'Machine/MachineReducer/SET_AMOUNT';
-const SET_USER_DEPOSITED_AMOUNT = 'Machine/MachineReducer/SET_USER_DEPOSITED_AMOUNT';
-const SET_BUY_PRODUCT = 'Machine/MachineReducer/SET_BUY_PRODUCT';
+export const SET_AMOUNT = 'Machine/MachineReducer/SET_AMOUNT';
+export const SET_USER_DEPOSITED_AMOUNT = 'Machine/MachineReducer/SET_USER_DEPOSITED_AMOUNT';
+export const SET_BUY_PRODUCT = 'Machine/MachineReducer/SET_BUY_PRODUCT';
 
 const initialState: InitialStateType = {
     deposite: [
@@ -15,7 +22,7 @@ const initialState: InitialStateType = {
     userDepositedAmount: 0
 };
 
-export const machineReducer = (state: InitialStateType = initialState, action: any): InitialStateType => {
+export const machineReducer = (state: InitialStateType = initialState, action: ActionsType): InitialStateType => {
     switch (action.type) {
         case SET_AMOUNT:
             return {
@@ -38,18 +45,18 @@ export const machineReducer = (state: InitialStateType = initialState, action: a
     }
 };
 
-export const setMachineAmountAc = (count: number, currency: number) => ({
+export const setMachineAmountAc = (count: number, currency: number): SetMachineAmountType => ({
     type: SET_AMOUNT,
     currency,
     count
 });
 
-export const setUserDepositedAmountAc = (amount: number) => ({
+export const setUserDepositedAmountAc = (amount: number): SetUserDepositedAmountType => ({
     type: SET_USER_DEPOSITED_AMOUNT,
     amount
 });
 
-export const setBuyProductAc = (amount: number) => ({
+export const setBuyProductAc = (amount: number): SetBuyProductType => ({
     type: SET_BUY_PRODUCT,
     amount
 });

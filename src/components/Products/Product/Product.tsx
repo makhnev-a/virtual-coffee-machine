@@ -10,8 +10,8 @@ type PropsType = {
 };
 
 export const Product = ({name, count, price}: PropsType) => {
-    const amount: any = useSelector<AppStateType>(state => state.machine.userDepositedAmount);
     const dispatch = useDispatch();
+    const amount = useSelector((state: AppStateType) => state.machine.userDepositedAmount);
 
     const clickProductHandler = () => {
         if (amount === 0) {

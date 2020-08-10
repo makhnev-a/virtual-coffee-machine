@@ -6,7 +6,7 @@ import {Product} from "./Product/Product";
 import styles from './products.module.css';
 
 export const Products = () => {
-    const products: any = useSelector<AppStateType>(state => state.product.products);
+    const {products} = useSelector((state: AppStateType) => state.product);
 
     return (
         <>
