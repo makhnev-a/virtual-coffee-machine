@@ -2,6 +2,7 @@ import {InitialStateType, MachineCurrencyType} from "./types";
 
 const SET_AMOUNT = 'Machine/MachineReducer/SET_AMOUNT';
 const SET_USER_DEPOSITED_AMOUNT = 'Machine/MachineReducer/SET_USER_DEPOSITED_AMOUNT';
+const SET_BUY_PRODUCT = 'Machine/MachineReducer/SET_BUY_PRODUCT';
 
 const initialState: InitialStateType = {
     deposite: [
@@ -30,6 +31,8 @@ export const machineReducer = (state: InitialStateType = initialState, action: a
             };
         case SET_USER_DEPOSITED_AMOUNT:
             return {...state, userDepositedAmount: state.userDepositedAmount + action.amount};
+        case SET_BUY_PRODUCT:
+            return {...state, userDepositedAmount: state.userDepositedAmount - action.amount};
         default:
             return state;
     }
@@ -43,5 +46,10 @@ export const setMachineAmountAc = (count: number, currency: number) => ({
 
 export const setUserDepositedAmountAc = (amount: number) => ({
     type: SET_USER_DEPOSITED_AMOUNT,
+    amount
+});
+
+export const setBuyProductAc = (amount: number) => ({
+    type: SET_BUY_PRODUCT,
     amount
 });

@@ -1,12 +1,26 @@
 import React from "react";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {AppStateType} from "../../redux/store";
 import {CurrenceType} from "../../redux/reducers/user/types";
 import {Title} from "../Title/Title";
 import {UserDepositRow} from "./UserRow/UserDepositRow";
+import {returnCoins} from "../../redux/reducers/user/user.reducer";
+import {setBuyProductAc} from "../../redux/reducers/machine/machine.reducer";
 
 export const UserDeposit = () => {
-    const {deposite, amount}: any = useSelector<AppStateType>(state => state.user);
+    const [deposite, amount, userDepositedAmount] = useSelector((state: AppStateType) => [
+        state.user.deposite,
+        state.user.amount,
+        state.machine.userDepositedAmount
+    ]);
+    const dispatch = useDispatch();
+
+    const onSurrenderHandler = () => {
+        if (userDepositedAmount !== 0) {
+            dispatch(returnCoins(userDepositedAmount));
+            dispatch(setBuyProductAc(userDepositedAmount))
+        }
+    };
 
     return (
         <>
@@ -21,7 +35,7 @@ export const UserDeposit = () => {
                 />
             )}
             <br/>
-            <button>Сдача</button>
+            <button onClick={onSurrenderHandler}>Сдача</button>
         </>
     );
 };
