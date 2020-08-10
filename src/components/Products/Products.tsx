@@ -16,6 +16,7 @@ export const Products = () => {
                         name={product.name}
                         count={product.count}
                         price={product.price}
+                        img={product.img}
                         key={`product${index}`}
                     />
                 )}

@@ -7,9 +7,10 @@ type PropsType = {
     name: string
     count: number
     price: number
+    img: string
 };
 
-export const Product = ({name, count, price}: PropsType) => {
+export const Product = ({name, count, price, img}: PropsType) => {
     const dispatch = useDispatch();
     const amount = useSelector((state: AppStateType) => state.machine.userDepositedAmount);
 
@@ -26,6 +27,14 @@ export const Product = ({name, count, price}: PropsType) => {
 
     return (
         <article>
+            <img
+                width={100}
+                height={100}
+                src={img}
+                alt="Картинка продукта"
+                onClick={clickProductHandler}
+            />
+            <br/>
             <span>{name} ({count})</span>
             <div>{price} руб.</div>
             <button onClick={clickProductHandler}>Купить</button>

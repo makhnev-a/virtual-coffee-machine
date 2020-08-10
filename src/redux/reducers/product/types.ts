@@ -3,6 +3,7 @@ export type ProductType = {
     name: string
     price: number
     count: number
+    img: string
 };
 
 export type InitialStateType = {

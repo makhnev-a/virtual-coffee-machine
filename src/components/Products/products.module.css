@@ -1,5 +1,6 @@
 .products {
     display: flex;
     justify-content: space-around;
-    flex-direction: column;
+    flex-wrap: wrap;
+    width: 300px;
 }

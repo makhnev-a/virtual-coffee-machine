@@ -29,11 +29,11 @@ export const machineReducer = (state: InitialStateType = initialState, action: A
                 ...state,
                 amount: state.amount + action.currency,
                 deposite: state.deposite.map((dep: MachineCurrencyType) => {
-                    if (dep.currency !== action.currency) {
-                        return dep;
-                    } else {
+                    if (dep.currency === action.currency) {
                         return {...dep, count: dep.count + 1};
                     }
+
+                    return dep;
                 })
             };
         case SET_USER_DEPOSITED_AMOUNT:
