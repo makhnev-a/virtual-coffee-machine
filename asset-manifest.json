@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/virtual-coffee-machine/static/css/main.a8da9462.chunk.css",
+    "main.js": "/virtual-coffee-machine/static/js/main.a4e10650.chunk.js",
+    "main.js.map": "/virtual-coffee-machine/static/js/main.a4e10650.chunk.js.map",
+    "runtime-main.js": "/virtual-coffee-machine/static/js/runtime-main.7270f675.js",
+    "runtime-main.js.map": "/virtual-coffee-machine/static/js/runtime-main.7270f675.js.map",
+    "static/js/2.5ad19111.chunk.js": "/virtual-coffee-machine/static/js/2.5ad19111.chunk.js",
+    "static/js/2.5ad19111.chunk.js.map": "/virtual-coffee-machine/static/js/2.5ad19111.chunk.js.map",
+    "index.html": "/virtual-coffee-machine/index.html",
+    "precache-manifest.8e4d0b2fd14d50524fc8e30e85976cd0.js": "/virtual-coffee-machine/precache-manifest.8e4d0b2fd14d50524fc8e30e85976cd0.js",
+    "service-worker.js": "/virtual-coffee-machine/service-worker.js",
+    "static/css/main.a8da9462.chunk.css.map": "/virtual-coffee-machine/static/css/main.a8da9462.chunk.css.map",
+    "static/js/2.5ad19111.chunk.js.LICENSE.txt": "/virtual-coffee-machine/static/js/2.5ad19111.chunk.js.LICENSE.txt",
+    "static/media/coffee.jpg": "/virtual-coffee-machine/static/media/coffee.279dce27.jpg",
+    "static/media/juice.jpg": "/virtual-coffee-machine/static/media/juice.aa21bd61.jpg",
+    "static/media/milk-coffee.jpeg": "/virtual-coffee-machine/static/media/milk-coffee.a590eb30.jpeg",
+    "static/media/tea.png": "/virtual-coffee-machine/static/media/tea.50b22ba1.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7270f675.js",
+    "static/js/2.5ad19111.chunk.js",
+    "static/css/main.a8da9462.chunk.css",
+    "static/js/main.a4e10650.chunk.js"
+  ]
+}
