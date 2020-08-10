@@ -11,8 +11,9 @@ type PropsType = {
 
 export const UserDepositRow = ({currency, count, index}: PropsType) => {
     const dispatch = useDispatch();
+
     const clickAmountHandler = () => {
-        dispatch(setAmountAc(count, currency));
+        dispatch(setAmountAc(currency));
         dispatch(setMachineAmountAc(count, currency));
         dispatch(setUserDepositedAmountAc(currency));
     };

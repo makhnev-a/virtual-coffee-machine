@@ -1,7 +1,7 @@
-import {CurrenceType, InitialStateType} from "./types";
+import {ActionsType, CurrenceType, InitialStateType, ReturnCoinsType, SetAmountType} from "./types";
 
-const SET_AMOUNT = 'User/UserReducer/SET_AMOUNT';
-const RETURN_COINS = 'User/UserReducer/RETURN_COINS';
+export const SET_AMOUNT = 'User/UserReducer/SET_AMOUNT';
+export const RETURN_COINS = 'User/UserReducer/RETURN_COINS';
 
 const initialState: InitialStateType = {
     deposite: [
@@ -13,7 +13,7 @@ const initialState: InitialStateType = {
     amount: 320
 };
 
-export const userReducer = (state: InitialStateType = initialState, action: any): InitialStateType => {
+export const userReducer = (state: InitialStateType = initialState, action: ActionsType): InitialStateType => {
     switch (action.type) {
         case SET_AMOUNT:
             return {
@@ -39,19 +39,18 @@ export const userReducer = (state: InitialStateType = initialState, action: any)
     }
 };
 
-export const setAmountAc = (newCount: number, currency: number) => ({
+export const setAmountAc = (currency: number): SetAmountType => ({
     type: SET_AMOUNT,
-    newCount,
     currency
 });
 
-export const returnCoins = (sum: number) => ({
+export const returnCoins = (sum: number): ReturnCoinsType => ({
     type: RETURN_COINS,
     sum
-})
+});
 
 const calcCoins = (sum: number, deposite: Array<CurrenceType>): Array<CurrenceType> => {
-    const obj: {[key: string]: number} = {
+    const obj: { [key: string]: number } = {
         '1': 0,
         '2': 0,
         '5': 0,

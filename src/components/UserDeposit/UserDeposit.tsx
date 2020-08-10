@@ -8,12 +8,12 @@ import {returnCoins} from "../../redux/reducers/user/user.reducer";
 import {setBuyProductAc} from "../../redux/reducers/machine/machine.reducer";
 
 export const UserDeposit = () => {
+    const dispatch = useDispatch();
     const [deposite, amount, userDepositedAmount] = useSelector((state: AppStateType) => [
         state.user.deposite,
         state.user.amount,
         state.machine.userDepositedAmount
     ]);
-    const dispatch = useDispatch();
 
     const onSurrenderHandler = () => {
         if (userDepositedAmount !== 0) {
@@ -26,7 +26,6 @@ export const UserDeposit = () => {
         <>
             <Title text={'Ваши деньги'} num={amount}/>
             {deposite.map((dep: CurrenceType, index: number) =>
-                // return <div key={`userDeposite${index}`}>{dep.currency} руб. ({dep.count}) <button onClick={() => {dispatch(setAmountAc(dep.count, dep.currency))}}>Внести</button></div>
                 <UserDepositRow
                     key={`userDeposit${index}`}
                     currency={dep.currency}
