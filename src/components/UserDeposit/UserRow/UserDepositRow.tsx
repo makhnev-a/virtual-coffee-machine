@@ -13,6 +13,10 @@ export const UserDepositRow = ({currency, count, index}: PropsType) => {
     const dispatch = useDispatch();
 
     const clickAmountHandler = () => {
+        if (count <= 0) {
+            return;
+        }
+
         dispatch(setAmountAc(currency));
         dispatch(setMachineAmountAc(count, currency));
         dispatch(setUserDepositedAmountAc(currency));
@@ -21,7 +25,10 @@ export const UserDepositRow = ({currency, count, index}: PropsType) => {
     return (
         <div key={`userDeposite${index}`}>
             {currency} руб. ({count})
-            <button onClick={clickAmountHandler}>Внести</button>
+            <button
+                onClick={clickAmountHandler}
+                disabled={count <= 0}
+            >Внести</button>
         </div>
     );
 };
